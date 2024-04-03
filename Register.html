@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="StylesRegister.css" />
+</head>
+<body>
+
+    <div class="main">
+        <header class="Encabezado">
+            <div class="Encabezado-Publicidad">
+                <p id="messageContainer">Prueba tu suerte 🍀 por solo $75 podrías ganar hasta $100,000</p>
+            </div>
+            <div class="Encabezado-Sorteos">
+                <img src="img/logo sorteos.png" style="width: 200px; height: auto;">
+            </div>
+
+            <script>
+                // Lista de mensajes a mostrar
+                var messages = [
+                    "¡Vive sin preocupaciones! Compra tu boleto y gana $34,000,000 o $188,888 mensuales durante 15 años.",     
+                    "Más efectivo, más especial 🍀 por solo $150 podrías ganar hasta $780,000", 
+                    "Prueba tu suerte 🍀 por solo $75 podrías ganar hasta $100,000"
+                ];
+            
+                var currentIndex = 0; // Índice del mensaje actual
+            
+                // Función para cambiar el mensaje
+                function changeMessage() {
+                    // Actualiza el contenido del div con el mensaje actual
+                    document.getElementById("messageContainer").innerHTML = messages[currentIndex];
+            
+                    // Incrementa el índice para el siguiente mensaje
+                    currentIndex = (currentIndex + 1) % messages.length;
+                }
+            
+                // Cambia el mensaje cada 3 segundos
+                setInterval(changeMessage, 3000);
+            </script>
+        </header>
+
+        <div class="Container">
+
+            <form action="/formulario" method="POST">
+
+                <div class = "Subtitle">
+                    <img src="img/perfil.png">
+                    <h2>Crea tu cuenta</h2>
+                </div>
+
+                <div class = "Content">
+                    <p>Para brindarte mayor seguridad durante tu compra, crea una cuenta llenando todos los datos requeridos.</p>
+
+                    <div class="Mayor-Edad">
+                        <input type="radio" name="edad" id="aceptar" required>
+                        <label for="aceptar">Confirmo que soy mayor de 18 años y que los datos ingresados son iguales a los de mi INE.</label>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="name">Nombre(s)</label>
+                        <input type="text" id="name" placeholder="Nombre(s)" name="name" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="apellido paterno">Apellido Paterno</label>
+                        <input type="text" id="apellido paterno" placeholder="Apellido Paterno" name="apellido paterno" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="apellido materno">Apellido Materno</label>
+                        <input type="text" id="apellido materno" placeholder="Apellido Materno" name="apellido materno" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="Email">Correo Electrónico</label>
+                        <input type="email" id="email" placeholder="Correo Electrónico" name="Email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="telefono">Teléfono Móvil</label>
+                        <input type="tel" id="number" placeholder="Teléfono Móvil" name="Teléfono Móvil" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" placeholder="Contraseña" name="password" required>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="submit" class = btnRegister>REGISTRARSE</button>
+                        <a href="Login.html" class=btnLogin>INICIAR SESIÓN</a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
